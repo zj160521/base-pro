@@ -1,0 +1,33 @@
+server:
+  port: 8200
+spring:
+  profiles:
+    active: dev,zuul
+  application:
+    name: gateway-service
+  datasource:
+    url: ${mysqlUrl}
+    username: ${mysqlUsername}
+    password: ${mysqlPassword}
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.3.85:8848
+        namespace: f1bf1f79-226f-4368-8e0d-4b7514f5203b
+        prefix: simes
+        file-extension: yaml
+
+#zuul:
+#  routes:
+#    sys-service: /api/sys/**
+#    activiti-service: /api/activiti/**
+#  ignored-patterns: /*-service/**
+#
+#ribbon:
+#  #时间要大于hystrix的超时时间
+#  ReadTimeout: 4000
+#  ConnectTimeout: 4000
+#
+#logging:
+#  level:
+#    com.netflix: debug

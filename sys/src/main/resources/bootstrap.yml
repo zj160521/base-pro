@@ -1,0 +1,19 @@
+server:
+  port: 8210
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: sys-service
+  datasource:
+    url: ${mysqlUrl}
+    username: ${mysqlUsername}
+    password: ${mysqlPassword}
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.3.85:8848
+        namespace: f1bf1f79-226f-4368-8e0d-4b7514f5203b
+        prefix: simes
+        file-extension: yaml

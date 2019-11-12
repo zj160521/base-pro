@@ -1,0 +1,47 @@
+server:
+  port: 8220
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: activiti-service
+  datasource:
+    url: ${mysqlUrl}
+    username: ${mysqlUsername}
+    password: ${mysqlPassword}
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.3.85:8848
+        namespace: f1bf1f79-226f-4368-8e0d-4b7514f5203b
+        prefix: simes
+        file-extension: yaml
+  #freemarker模板配置
+  freemarker:
+    suffix: .ftl
+    cache: false
+    charset: UTF-8
+    contentType: text/html
+    requestContextAttribute: ctx
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/templates/
+    settings:
+      defaultEncoding: UTF-8
+      url_escaping_charset: UTF-8
+      locale: zh_CN
+  http:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+    activiti:
+      check-process-definitions: false
+#  activiti:
+#    database-schema-update: true
+#    history-level: full
+#    db-history-used: true
+#    check-process-definitions: false
+#  #    process-definition-location-prefix: classpath:/processes/
+#  jpa:
+#    open-in-view: false
+
