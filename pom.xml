@@ -24,7 +24,7 @@
     <groupId>com.singcheer</groupId>
     <artifactId>simes</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>simes</name>
+    <name>base</name>
 
     <properties>
         <java.version>1.8</java.version>
